@@ -18,7 +18,7 @@ public class Obstacle {
 	/* constructs a randomly-placed obstacle */
 	public Obstacle() {
 		Random rgen = new Random();
-		this.loc = new Posn( 400,  rgen.nextFloat(20, 300) );
+		this.loc = new Posn( 400,  rgen.nextFloat(20, 380) );
 	}
 
     /**
@@ -43,7 +43,7 @@ public class Obstacle {
     public Obstacle update() {        
     	
     	if (this.loc.getX() > -30) {
-            return new Obstacle(this.loc.translate(new Posn(-1f, 0)));
+            return new Obstacle(this.loc.translate(new Posn(-2f, 0)));
         } else {
             return this;
         }
@@ -69,7 +69,7 @@ public class Obstacle {
 	}
 	
     public boolean anyCollide( Posn p ) {
-    	return this.loc.distanceTo(p) < 10;
+    	return this.loc.distanceTo(p) < 25;
 		
     	/*
 		return p.getX() <= (this.getX(this.getLoc()) + 5) &&

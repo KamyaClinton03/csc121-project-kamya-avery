@@ -12,6 +12,7 @@ public class StartWorld implements IWorld {
     public void draw(PApplet p, String img, int x, int y, int w, int h) {
     	
     	PImage image = p.loadImage(img);
+    	p.imageMode(p.CENTER);
     	p.image(image, x, y, 100, 70);
     	
     }
@@ -21,15 +22,15 @@ public class StartWorld implements IWorld {
     	
         p.background(0,125,225);
         // draw hero
-        draw(p, "super-hero.png", 200, 60, 200, 80);
+        draw(p, "super-hero.png", 200, 110, 280, 160);
         // draw fire
-        draw(p, "fire-ball.png", 30, 40, 60, 40);
-        draw(p, "fire-ball.png", 210, 350, 60, 40);
-        draw(p, "fire-ball.png", 320, 150, 60, 40);
+        draw(p, "fire-ball.png", 40, 40, 60, 40);
+        draw(p, "fire-ball.png", 220, 350, 60, 40);
+        draw(p, "fire-ball.png", 330, 150, 60, 40);
         // draw clouds
-        draw(p, "cloud.png", 75, 100, 100, 70);
-        draw(p, "cloud.png", 50, 115, 100, 70);
-        draw(p, "cloud.png", 250, 215, 100, 70);
+        draw(p, "cloud.png", 85, 100, 100, 70);
+        draw(p, "cloud.png", 60, 115, 100, 70);
+        draw(p, "cloud.png", 270, 235, 100, 70);
         // draw text
         p.textSize(20);
         p.text("Super Dash", 160, 200);

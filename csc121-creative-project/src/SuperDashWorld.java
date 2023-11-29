@@ -20,7 +20,7 @@ public class SuperDashWorld  implements IWorld {
     // the position of the drop
     private Player p1;
     private ILoO obs;
-    private double generateRate = 0.01;  // the probability of a new obstacle appearing on each update
+    private double generateRate = 0.05;  // the probability of a new obstacle appearing on each update
     private int ticks;
     private int highScore;
 
@@ -39,8 +39,6 @@ public class SuperDashWorld  implements IWorld {
     public IWorld update() {
     	
     	if ( this.obs.anyCollided(p1.getLoc()) ) {
-    		String name = javax.swing.JOptionPane.showInputDialog("Please enter your name:");
-    		
     		if ( score() > this.highScore ) {
     			this.highScore = score();
     			this.writeHighScore();
@@ -187,7 +185,13 @@ public class SuperDashWorld  implements IWorld {
         } else if (this.obs.anyCollided(p1.getLoc())) { 
         	
         	return new EndWorld(this, obs);
+       
+        /*	
+        } else if (kev.getKey() == 'p' && this.obs.anyCollided(p1.getLoc())) {
         	
+        	return new SuperDashWorld(new Player(new Posn(50, 200)), new MTLoO(), 0);
+        	
+        */
         } else {
         	
             return this;
